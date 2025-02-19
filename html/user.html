@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MyAnimeList</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../css/standard.css" />
+    <link rel="stylesheet" href="../css/user.css" />
+  </head>
+  <body>
+    <header>
+      <section class="header-logo">
+        <div class="header-logo-image">placeholder</div>
+        <div class="header-logo-right">
+          <div class="login-button" onclick="goToLogin()">Login</div>
+          <div class="signup-button" onclick="goToSignup()">Sign Up</div>
+          <div id="dark-mode-button">Dark mode</div>
+        </div>
+      </section>
+
+      <section class="header-main">
+        <div class="header-main-left">
+          <div class="header-left-button" onclick="goToHome()">Home</div>
+          <div class="header-left-button">List</div>
+          <div class="header-left-button">News</div>
+        </div>
+        <div class="header-searchbar">
+          <form>
+            <input
+              type="text"
+              class="searchbar"
+              placeholder="Search for anime"
+            />
+            <input type="submit" class="searchbar-button" value="Search" />
+          </form>
+        </div>
+      </section>
+    </header>
+    <section class="user-main">
+        <div class="user-left"> 
+            <div class="user-avatar-nickname">
+                <img id="avatar" src="../img/placeholder.png">
+                <p> Siema </p>
+            </div>
+            <div>
+                aaaaaaaaaaaaaaaaaaa 
+                aaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaa             
+            </div>
+        </div>
+        <div class="user-right">
+          <div id="user-progress-bar">
+            <div class="progress-bar-part" id="watching"></div>   
+            <div class="progress-bar-part" id="completed"></div>  
+            <div class="progress-bar-part" id="dropped"></div>  
+            <div class="progress-bar-part" id="on-hold"></div>  
+            <div class="progress-bar-part" id="plan-to-watch"></div>  
+          </div>
+        </div>
+    </section>
+    <footer></footer>
+    <script src="../js/standard.js"></script>
+  </body>
+</html>
