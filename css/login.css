@@ -1,0 +1,67 @@
+:root {
+  /* --: #DDC4DD;  
+  --: #dccffc;   */
+  --accent-color: #a997df;
+  --main-color: #151a80;
+  --default-font: "Raleway", serif;
+  --background-color: #FFFFFF;
+  --searchbar-color: #FFFFFF;
+  --font-color: #000;
+}
+.main-body {
+  display: flex;
+  justify-content: center;
+}
+.login-main {
+  margin: 10px;
+  width: 40%;
+  height: 74vh;
+  border: solid 2px black;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#e-mail,
+#username,
+#password,
+#confirm-password {
+  width: 400px;
+  height: 50px;
+  border: solid 1px black;
+  outline: none; 
+  background-color: var(--searchbar-color);
+  color: var(--font-color);
+  transition-duration: 1s;
+}
+#login-button,
+#signup-button {
+  width: 200px;
+  height: 30px;
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+p {
+  font-family: var(--default-font);
+  color: var(--font-color);
+  transition-duration: 1s;
+}
+p#show-password {
+  border: solid 1px black;
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
+}
+#show-password-container {
+  width: 400px;
+  display: flex;
+  justify-content: right;
+}

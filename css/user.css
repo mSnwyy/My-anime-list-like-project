@@ -1,0 +1,77 @@
+:root {
+    /* --: #DDC4DD;  
+    --: #dccffc;   */
+    --accent-color: #a997df;
+    --main-color: #151a80;
+    --default-font: "Raleway", serif;
+    --background-color: #FFFFFF;
+    --searchbar-color: #FFFFFF;
+    --font-color: #FFFFFF;
+  }
+body{
+    font-family: var(--default-font);
+}
+.user-main{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+.user-left{
+    border: solid 2px black;
+    width: 200px;
+    padding: 10px;
+    text-align: center;
+    color: var(--font-color);
+    transition-duration: 1s;
+}
+.user-avatar-nickname{
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#avatar{
+    display: block;
+    width: 150px;
+    height: 150px;
+    border: solid 2px black;
+}
+.user-right{
+    width: 1200px;
+    border: solid 2px black;
+    margin-left: -2px;
+}
+#user-progress-bar{
+    border: solid 2px black;
+    width: 400px;
+    height: 30px;
+    margin-top: 20px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: row;
+    border-radius: 15px;
+    overflow: hidden;
+}
+#watching{
+    background-color: black;
+    width: 20%;
+}
+#completed {
+    background-color: green;
+    width: 20%;
+}
+#dropped{
+    background-color: pink;
+    width: 20%;
+}
+#on-hold{
+    background-color: purple;
+    width: 20%;
+}
+#plan-to-watch{
+    background-color: gray;
+    width: 20%;
+}
+
+
