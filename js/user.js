@@ -1,0 +1,1 @@
+let animeWatched = 100;
