@@ -1,0 +1,85 @@
+All anime in database with info:
+
+SELECT 
+    a.title,
+    a.synopsis,
+    a.episodes,
+    a.status,
+    a.release_date,
+    a.studio,
+    a.rating,
+    a.image_url,
+    GROUP_CONCAT(DISTINCT g.name ORDER BY g.name SEPARATOR ', ') AS genres
+FROM 
+    anime a
+LEFT JOIN 
+    anime_genres ag ON a.id = ag.anime_id
+LEFT JOIN 
+    genres g ON ag.genre_id = g.id
+GROUP BY 
+    a.id;
+
+------------------------------------------
+
+Anime selection based on status:
+
+SELECT title FROM anime WHERE status = 'Airing';
+
+-----------------------------------------
+
+Select top 10 anime:
+
+SELECT title, rating FROM anime ORDER BY rating DESC LIMIT 10;
+
+-----------------------------------------
+
+Find anime in choosen genre:
+
+SELECT 
+    title 
+FROM 
+    anime a 
+JOIN 
+    anime_genres ag ON a.id = ag.anime_id
+JOIN 
+    genres g ON ag.genre_id = g.id
+WHERE 
+    g.name = 'Ecchi';
+
+-----------------------------------------
+
+Select by year (will modify it to select by season):
+
+SELECT title FROM anime WHERE YEAR(release_date) = 2015;
+
+-----------------------------------------
+
+Select by studio:
+
+SELECT title FROM anime WHERE studio = 'Madhouse';
+
+-----------------------------------------
+
+Select with rating above:
+
+SELECT title, rating
+FROM anime
+WHERE rating > 8.0
+ORDER BY rating DESC;
+
+-----------------------------------------
+
+SELECT 
+    u.id AS user_id, 
+    u.username, 
+    COUNT(CASE WHEN uap.status = 'Completed' THEN 1 END) AS completed_count,
+    COUNT(CASE WHEN uap.status = 'Plan to Watch' THEN 1 END) AS plan_to_watch_count,
+    COUNT(CASE WHEN uap.status = 'Watching' THEN 1 END) AS watching_count,
+    COUNT(CASE WHEN uap.status = 'Dropped' THEN 1 END) AS dropped_count,
+    COUNT(CASE WHEN uap.status = 'On Hold' THEN 1 END) AS on_hold_count
+FROM users u
+LEFT JOIN user_anime_progress uap ON u.id = uap.user_id
+GROUP BY u.id, u.username;
+
+
+
