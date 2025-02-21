@@ -24,7 +24,8 @@ function sign_up() {
             $hashed_pass = password_hash($pass, PASSWORD_DEFAULT);
             $insert_query = "INSERT INTO users (username, email, password_hash, created_at) VALUES ('$username', '$email', '$hashed_pass', NOW())";
             if (mysqli_query($conn, $insert_query)) {
-                echo "User created successfully.";
+                header("Location: /sigma/html/login.php");
+                exit;
             } else {
                 echo "Error saving user: " . mysqli_error($conn);
             }
@@ -47,7 +48,8 @@ function login() {
             $row = mysqli_fetch_assoc($result);
             if (password_verify($pass, $row['password_hash'])) {
                 $_SESSION['user_id'] = $row['id'];
-                echo "Login successful.";
+                header("Location: /sigma/html/index.php");
+                exit;
             } else {
                 echo "Invalid password.";
             }
