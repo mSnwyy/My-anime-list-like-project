@@ -1,0 +1,125 @@
+:root {
+  /* --: #DDC4DD;  
+      --: #dccffc;   */
+  --accent-color: #a997df;
+  --accent-color-fix: #a997df;
+  --main-color: #151a80;
+  --default-font: "Raleway", serif;
+  --background-color: #ffffff;
+  --searchbar-color: #ffffff;
+  --font-color: #000;
+  --font-color-fix: #000000;
+  --shadow-color: #d4cfcf;
+  --shadow-color-fix: #d4cfcf;
+}
+body {
+  margin: 0 auto;
+  font-family: var(--default-font);
+}
+.container {
+  background: var(--shadow-color);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  max-width: 900px;
+  margin: auto;
+  transition-duration: 1s;
+}
+h2 {
+  text-align: center;
+  color: var(--font-color);
+  transition-duration: 1s;
+}
+.details {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  color: var(--font-color);
+  transition-duration: 1s;
+}
+.details img {
+  width: 220px;
+  height: auto;
+  border-radius: 10px;
+}
+.details div {
+  flex: 1;
+}
+.stats {
+  background: var(--shadow-color-fix);
+  color: var(--font-color);
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: bold;
+  transition-duration: 1s;
+}
+.button {
+  font-family: var(--default-font);
+  display: inline-block;
+  background: var(--accent-color);
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: 700;
+  margin-top: 10px;
+  transition: 0.5s ease;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+}
+.button:hover {
+  background: var(--main-color);
+}
+.synopsis {
+  margin-top: 20px;
+  background: var(--shadow-color-fix);
+  padding: 15px;
+  border-radius: 5px;
+  transition-duration: 1s;
+  color: var(--font-color);
+}
+.user-info {
+  background: var(--shadow-color-fix);
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+  color: var(--font-color);
+  transition-duration: 1s;
+}
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.modal-content {
+  background-color: var(--shadow-color-fix);
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
+}
+.close-btn {
+  color: var(--font-color);
+  float: right;
+  font-size: 25px;
+  font-weight: bold;
+}
+.close-btn:hover,
+.close-btn:focus {
+  color: var(--font-color-fix);
+  text-decoration: none;
+  cursor: pointer;
+}

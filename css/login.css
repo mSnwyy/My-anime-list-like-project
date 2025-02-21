@@ -48,7 +48,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border: none;
 }
+
 p {
   font-family: var(--default-font);
   color: var(--font-color);

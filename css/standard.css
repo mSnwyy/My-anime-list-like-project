@@ -4,14 +4,16 @@
   --accent-color: #a997df;
   --main-color: #151a80;
   --default-font: "Raleway", serif;
-  --background-color: #FFFFFF;
-  --searchbar-color: #FFFFFF;
+  --background-color: #ffffff;
+  --searchbar-color: #ffffff;
   --font-color: #000;
+  --font-color-fix: #000000;
 }
 body {
   background-color: var(--background-color);
   margin: 0 auto;
   transition-duration: 1s;
+  font-family: var(--default-font);
 }
 .header-logo {
   width: 100%;
@@ -19,6 +21,8 @@ body {
   display: flex;
   justify-content: space-around;
   font-family: var(--default-font);
+  color: var(--font-color-fix);
+  transition-duration: 1s;
 }
 .header-main {
   display: flex;
@@ -49,16 +53,43 @@ body {
 }
 .header-searchbar input {
   background-color: var(--searchbar-color);
-  border: none; 
-  outline: none; 
+  border: none;
+  outline: none;
   color: var(--font-color);
   transition-duration: 1s;
 }
+.search-results {
+  position: absolute;
+  background: var(--searchbar-color);
+  max-width: 304px;
+  width: 50%;
+  z-index: 1000;
+}
+.search-result-item {
+  padding: 10px;
+  cursor: pointer;
+  color: var(--font-color);
+}
+.search-result-item:hover {
+  background: #555;
+  color: white;
+}
+.anime-link {
+  text-decoration: none;
+  color: var(--font-color);
+}
+
+.anime-link:hover {
+  text-decoration: underline;
+  color: var(--accent-color);
+}
+
 .header-logo-image {
   width: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
+  color: var(--font-color);
 }
 .header-logo-right {
   width: 400px;
@@ -96,7 +127,7 @@ footer {
   position: absolute;
   bottom: 0px;
 }
-#dark-mode-button{
+#dark-mode-button {
   width: 100px;
   cursor: pointer;
   color: white;
@@ -105,5 +136,12 @@ footer {
   border-radius: 5px;
   text-align: center;
   font-weight: 600;
+  transition-duration: 1s;
+}
+
+#header-user-nickname {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--font-color);
   transition-duration: 1s;
 }
