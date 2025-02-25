@@ -23,6 +23,7 @@ body {
   font-family: var(--default-font);
   color: var(--font-color-fix);
   transition-duration: 1s;
+  background-color: var(--background-color);
 }
 .header-main {
   display: flex;
@@ -85,11 +86,14 @@ body {
 }
 
 .header-logo-image {
-  width: 100px;
+  width: 100px !important;
   display: flex;
   justify-content: center;
   align-items: center;
   color: var(--font-color);
+}
+.header-logo-image img{
+  height: 45px;
 }
 .header-logo-right {
   width: 400px;
@@ -123,8 +127,7 @@ body {
 footer {
   background-color: var(--main-color);
   width: 100%;
-  height: 13vh;
-  position: absolute;
+  height: 10vh;
   bottom: 0px;
 }
 #dark-mode-button {

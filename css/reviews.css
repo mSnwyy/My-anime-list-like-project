@@ -1,0 +1,100 @@
+:root {
+    /* --: #DDC4DD;  
+        --: #dccffc;   */
+    --accent-color: #a997df;
+    --accent-color-fix: #a997df;
+    --main-color: #151a80;
+    --default-font: "Raleway", serif;
+    --background-color: #ffffff;
+    --searchbar-color: #ffffff;
+    --font-color: #000;
+    --font-color-fix: #000000;
+    --shadow-color: #d4cfcf;
+    --shadow-color-fix: #d4cfcf;
+  }
+  body{
+    margin: 0 auto;
+    font-family: var(--default-font);
+  }
+  #user-review{
+    display: none;
+  }
+  #user-reviews{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .review-block{
+    background-color: var(--shadow-color);
+    width: 1000px;
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 3%;
+    transition: 1s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  /* .review-block:nth-child(odd){
+    margin-left: 3%;
+    left: 0px;
+  }
+  .review-block:nth-child(even){
+    margin-right: 3%;
+    right: 0px;
+  } */
+  .avatar-img{
+    width: 150px;
+    height: 150px;
+    margin-top: 20px;
+    border-radius: 5px;
+  }
+  .review-left{
+    height: 500px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--font-color);
+    transition: 1s;
+    border-right: solid 1px var(--font-color);
+  }
+  .review-username {
+    font-weight: 600;
+    font-size: 30px;
+    max-width: 150px;
+  }
+  .review-content{
+    width: 800px;
+  }
+  .review-score{
+    font-size: 30px;
+    font-weight: 600;
+  }
+  .review-title{
+    margin: 10px;
+    background-color: var(--shadow-color-fix);
+    transition: 1s;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--font-color);
+    border-radius: 10px;
+    padding: 5px;
+  }
+  .review-text{
+    background-color: var(--shadow-color-fix);
+    color: var(--font-color);
+    height: 380px; 
+    max-height: 380px;
+    transition: 1s;
+    margin: 10px;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-style: italic;
+    overflow: auto;
+  }

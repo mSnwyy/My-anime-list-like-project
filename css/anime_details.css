@@ -90,7 +90,6 @@ h2 {
   color: var(--font-color);
   transition-duration: 1s;
 }
-/* Modal styles */
 .modal {
   display: none;
   position: fixed;
@@ -122,4 +121,41 @@ h2 {
   color: var(--font-color-fix);
   text-decoration: none;
   cursor: pointer;
+}
+#user-review{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  color: var(--font-color);
+  text-align: center;
+}
+#review{
+  display: flex;
+  align-items: baseline;
+  width: 900px;
+  max-width: 900px;
+  height: 200px;
+  max-height: 200px;
+  margin-bottom: 20px;
+}
+textarea {
+  resize: none;
+  background-color: var(--shadow-color-fix);
+  transition: 1s;
+  color: var(--font-color);
+}
+button{
+  background-color: var(--accent-color);
+  color: white;
+  width: 100px;
+  padding: 5px;
+  text-align: center;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: var(--default-font);
+  border: none;
+  font-size: 15px;
+  margin: 10px;
 }

@@ -1,0 +1,77 @@
+:root {
+    /* --: #DDC4DD;  
+        --: #dccffc;   */
+    --accent-color: #a997df;
+    --accent-color-fix: #a997df;
+    --main-color: #151a80;
+    --default-font: "Raleway", serif;
+    --background-color: #ffffff;
+    --searchbar-color: #ffffff;
+    --font-color: #000;
+    --font-color-fix: #000000;
+    --shadow-color: #d4cfcf;
+    --shadow-color-fix: #d4cfcf;
+  }
+  body{
+    margin: 0 auto;
+    font-family: var(--default-font);
+  }
+  #edit-main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .edit-container{
+    margin: 40px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    width: 500px;
+    border: solid 2px var(--font-color);
+    transition: 1s;
+  }
+  h2{
+    color: var(--font-color);
+    transition: 1s;
+  }
+  #user-edit-form form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--font-color);
+    transition: 1s;
+    
+  }
+  button{
+    background-color: var(--accent-color);
+    color: white;
+    width: 100px;
+    padding: 5px;
+    text-align: center;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: var(--default-font);
+    border: none;
+    font-size: 15px;
+    margin-top: 10px;
+  }
+  #nickname, #description{
+    width: 400px;
+    height: 20px;
+    border: solid 1px black;
+    outline: none; 
+    background-color: var(--searchbar-color);
+    color: var(--font-color);
+    transition-duration: 1s;
+    margin-top: 10px;
+  }
+ #description{
+    height: 300px;
+ }
+ label{
+    font-size: 20px;
+    margin-top: 10px;
+ }
