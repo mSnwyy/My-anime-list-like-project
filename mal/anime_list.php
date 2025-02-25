@@ -91,7 +91,7 @@ mysqli_close($conn);
         <a href="anime_list.php?status=Watching">Watching</a>
         <a href="anime_list.php?status=Completed">Completed</a>
         <a href="anime_list.php?status=Plan to Watch">Plan to Watch</a>
-        <a href="anime_list.php?status=On Hold">On Hold</a>
+        <a href="anime_list.php?status=On-Hold">On Hold</a>
         <a href="anime_list.php?status=Dropped">Dropped</a>
     </div>
 

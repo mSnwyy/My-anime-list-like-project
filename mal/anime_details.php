@@ -16,7 +16,7 @@ $user_id = $_SESSION['user_id'] ?? null;
 $query = "SELECT 
             a.id, a.title, a.image_url, a.episodes, a.status, a.synopsis, 
             a.studio, 
-            GROUP_CONCAT(g.name SEPARATOR ', ') AS genres,
+            GROUP_CONCAT(DISTINCT g.name SEPARATOR ', ') AS genres,
             COALESCE(AVG(up.score), 0) AS avg_score,
             COUNT(DISTINCT up.user_id) AS members
           FROM anime a
@@ -47,6 +47,25 @@ if ($user_id) {
     }
 }
 
+if (isset($_POST['submit_review'])) {
+    $review_text = $conn->real_escape_string($_POST['review']);  
+
+    if (!empty($review_text)) {
+        $insert_query = "INSERT INTO reviews (user_id, anime_id, review_text) 
+                         VALUES ('$user_id', '$anime_id', '$review_text')";  
+
+        if ($conn->query($insert_query)) {
+            echo "<script>alert('Review submitted successfully!');</script>";
+        } else {
+            echo "<script>alert('Error submitting review: " . $conn->error . "');</script>";
+        }
+    } else {
+        echo "<script>alert('Please write a review before submitting.');</script>";
+    }
+}
+
+
+
 if (isset($_GET['update_anime'])) {
     $status = $conn->real_escape_string($_GET['status']);
     $episodes_watched = (int) $_GET['episodes_watched'];
@@ -72,6 +91,8 @@ if (isset($_GET['update_anime'])) {
 }
 ?>
 
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -91,7 +112,9 @@ if (isset($_GET['update_anime'])) {
 <body>
     <header>
         <section class="header-logo">
-            <div class="header-logo-image">placeholder</div>
+            <div class="header-logo-image">
+                <img src="../img/logo.png">
+            </div>
             <div class="header-logo-right">
                 <div class="header-user">
                     <div id="header-user-avatar"></div>
@@ -107,7 +130,7 @@ if (isset($_GET['update_anime'])) {
             <div class="header-main-left">
                 <div class="header-left-button" onclick="goToHome()">Home</div>
                 <div class="header-left-button" onclick="goToList()">List</div>
-                <div class="header-left-button">News</div>
+                <div class="header-left-button" onclick="goToReviews()">Reviews</div>
             </div>
             <div class="header-searchbar">
                 <form>
@@ -153,7 +176,6 @@ if (isset($_GET['update_anime'])) {
         </div>
     </div>
 
-    <!-- Modal Structure -->
     <div id="editModal" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal()">&times;</span>
@@ -192,7 +214,15 @@ if (isset($_GET['update_anime'])) {
             </form>
         </div>
     </div>
+    <section id="user-review">
+    <h2>Write your review</h2>
+    <form action="../mal/anime_details.php?id=<?php echo $anime_id;?>" method="POST">
+        <textarea id="review" name="review"></textarea>
+        <button type="submit" name="submit_review">Post review</button>
+    </form>
+</section>
 
+    <footer></footer>
     <?php if (isset($error_message)): ?>
         <script>
             alert("<?php echo addslashes($error_message); ?>");
