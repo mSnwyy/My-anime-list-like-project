@@ -20,7 +20,9 @@
 <body>
   <header>
     <section class="header-logo">
-      <div class="header-logo-image">placeholder</div>
+      <div class="header-logo-image">
+        <img src="../img/logo.png">
+      </div>
       <div class="header-logo-right">
         <div class="header-user">
           <div id="header-user-avatar"></div>
@@ -36,7 +38,7 @@
       <div class="header-main-left">
         <div class="header-left-button" onclick="goToHome()">Home</div>
         <div class="header-left-button" onclick="goToWholeList()">List</div>
-        <div class=" header-left-button">News</div>
+        <div class=" header-left-button" onclick="goToReviews()">Reviews</div>
       </div>
       <div class="header-searchbar">
         <form>

@@ -8,10 +8,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet" />
-
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/10e02d8f72.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="../css/standard.css" />
   <link rel="stylesheet" href="../css/user.css" />
   <?php include "../mal/index.php"; ?>
@@ -20,7 +18,9 @@
 <body>
   <header>
     <section class="header-logo">
-      <div class="header-logo-image">placeholder</div>
+        <div class="header-logo-image">
+          <img src="../img/logo.png">
+        </div>
       <div class="header-logo-right">
         <div class="header-user">
           <div id="header-user-avatar"></div>
@@ -36,7 +36,7 @@
       <div class="header-main-left">
         <div class="header-left-button" onclick="goToHome()">Home</div>
         <div class="header-left-button" onclick="goToWholeList()">List</div>
-        <div class="header-left-button">News</div>
+        <div class="header-left-button" onclick="goToReviews()">Reviews</div>
       </div>
       <div class="header-searchbar">
         <form>
@@ -47,6 +47,7 @@
     </section>
   </header>
   <section class="user-main">
+    <div id="edit-user-button" onclick="goToEditUser()"><i class="fa-solid fa-gear"></i></div>
     <div class="position-fix">
       <div class="user-left">
         <div id="user-avatar" class="user-bento-box">
@@ -56,10 +57,12 @@
           <div id="user-nickname"></div>
           <div id="user-created-date"></div>
           <div id="user-anime-on-list"></div>
+          <div id="user-average-score"></div>
         </div>
       </div>
       <div class="user-right-up">
         <div class="user-bento-box" id="user-progress-container">
+          <p id="progress-container-text">User's anime progress</p>
           <div id="user-progress-bar">
             <div class="progress-bar-part" id="watching">
               <div class="progress-bar-text" id="watching-text">Watching</div>
@@ -80,10 +83,16 @@
           <div id="user-list-button" onclick="goToList()">User's anime list</div>
         </div>
         <div class="user-right-down">
-          <div class="user-bento-box" id="user-main-profile"></div>
+          <div class="user-bento-box" id="user-main-profile">
+            <p>User don't have an description yet.</p>
+          </div>
           <div class="user-right-down-second">
-            <div class="user-bento-box" id="user-last-watch"></div>
-            <div class="user-bento-box" id="user-favourite"></div>
+            <div class="user-bento-box" id="user-last-watch">
+              <div class="anime-list" id="recent-anime-container"></div>
+            </div>
+            <div class="user-bento-box" id="user-favourite">
+              <div class="anime-list" id="top-anime-container"></div>
+            </div>
           </div>
         </div>
       </div>

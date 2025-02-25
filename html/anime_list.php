@@ -60,7 +60,9 @@ mysqli_close($conn);
     <header>
         <header>
             <section class="header-logo">
-                <div class="header-logo-image">placeholder</div>
+                 <div class="header-logo-image">
+                     <img src="../img/logo.png">
+                 </div>
                 <div class="header-logo-right">
                     <div class="header-user">
                         <div id="header-user-avatar"></div>
@@ -76,7 +78,7 @@ mysqli_close($conn);
                 <div class="header-main-left">
                     <div class="header-left-button" onclick="goToHome()">Home</div>
                     <div class="header-left-button" onclick="goToWholeList()">List</div>
-                    <div class="header-left-button">News</div>
+                    <div class="header-left-button" onclick="goToReviews()">Reviews</div>
                 </div>
                 <div class="header-searchbar">
                     <form>
@@ -86,14 +88,14 @@ mysqli_close($conn);
                 </div>
             </section>
         </header>
-        <h2>Your Anime List</h2>
+        <h2 >Your Anime List</h2>
 
         <div class="tabs">
             <a href="anime_list.php?status=All">All Anime</a>
             <a href="anime_list.php?status=Watching">Watching</a>
             <a href="anime_list.php?status=Completed">Completed</a>
             <a href="anime_list.php?status=Plan to Watch">Plan to Watch</a>
-            <a href="anime_list.php?status=On Hold">On Hold</a>
+            <a href="anime_list.php?status=On-Hold">On Hold</a>
             <a href="anime_list.php?status=Dropped">Dropped</a>
         </div>
 
@@ -139,7 +141,7 @@ mysqli_close($conn);
                             <td class="status-bar <?= $statusClass ?>"></td>
                             <td><?php echo $counter++; ?></td>
                             <td><a href="../mal/anime_details.php?id=<?php echo $anime['anime_id']; ?>">
-                                    <img src="<?php echo htmlspecialchars($anime['anime_image']); ?>" alt="Anime Image">
+                                    <img  src="<?php echo htmlspecialchars($anime['anime_image']); ?>" alt="Anime Image">
                                 </a></td>
                             <td>
                                 <a href="../mal/anime_details.php?id=<?php echo $anime['anime_id']; ?>" class="anime-title">

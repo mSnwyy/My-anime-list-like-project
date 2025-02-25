@@ -4,23 +4,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sign in</title>
+  <title>MyAnimeList</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet" />
-
-  <link rel="stylesheet" href="../css/standard.css">
-  <link rel="stylesheet" href="../css/login.css">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/10e02d8f72.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../css/standard.css" />
+  <link rel="stylesheet" href="../css/reviews.css" />
+  <?php include "../mal/index.php"; ?>
 </head>
 
 <body>
   <header>
     <section class="header-logo">
       <div class="header-logo-image">
-       <img src="../img/logo.png">
+        <img src="../img/logo.png">
       </div>
       <div class="header-logo-right">
         <div class="header-user">
@@ -28,7 +27,7 @@
           <div id="header-user-nickname" onclick="goToUser()"></div>
         </div>
         <div class="login-button" id="loginButton" onclick="goToLogin()">Login</div>
-        <div class="signup-button" id="signupButton">Sign Up</div>
+        <div class="signup-button" id="signupButton" onclick="goToSignup()">Sign Up</div>
         <div id="dark-mode-button">Dark mode</div>
       </div>
     </section>
@@ -37,7 +36,7 @@
       <div class="header-main-left">
         <div class="header-left-button" onclick="goToHome()">Home</div>
         <div class="header-left-button" onclick="goToWholeList()">List</div>
-        <div class="header-left-button" onclick="goToReviews()">Reviews</div>
+        <div class="header-left-button">Reviews</div>
       </div>
       <div class="header-searchbar">
         <form>
@@ -47,26 +46,10 @@
       </div>
     </section>
   </header>
-  <section class="main-body">
-    <section class="login-main">
-      <form class="login" action="/sigma/mal/index.php" method="post">
-        <p>E-mail</p>
-        <input type="textbox" id="e-mail" name="email" />
-        <p>Username</p>
-        <input type="textbox" id="username" name="username" />
-        <p>Password</p>
-        <input type="password" id="password" name="pass" />
-        <p>Confirm password</p>
-        <input type="password" id="confirm-password" name="pass" />
-        <button type="submit" class="signup-button" id="signup-button" name="submit_signup">Sign up</button>
-        <div class="login-button" id="login-button" onclick="goToLogin()">
-          Login
-        </div>
-      </form>
+    <section id="user-reviews" class="user-reviews">
     </section>
-  </section>
-  <footer></footer>
+  <script src="../js/standard.js"></script>
+  <script src="../js/reviews.js"></script>
 </body>
-<script src="../js/standard.js"></script>
 
 </html>
